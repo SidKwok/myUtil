@@ -7,7 +7,8 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     browserSync = require('browser-sync').create(),
-    webpack = require('webpack-stream');
+    webpack = require('webpack-stream')，
+    babel = require('gulp-babel');
 
 
 /**
@@ -44,6 +45,19 @@ gulp.task('webpack', function() {
             stream: true
         }));
 });
+
+/**
+* 使用Babel编译ES6至ES5
+* npm install --save-dev gulp-babel babel-preset-es2015
+* 以下用法为ES6
+*/
+gulp.task('babel', () =>
+    gulp.src('src/app.js')
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest('dist'))
+);
 
 /**
 * 组合任务
