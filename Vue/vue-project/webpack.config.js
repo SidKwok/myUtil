@@ -24,6 +24,16 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract(
+                    "style-loader", 'css-loader?sourceMap!sass-loader!cssnext-loader')
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract(
+                    "style-loader", "css-loader?sourceMap!cssnext-loader")
+            },
+            {
                 test: /\.json$/,
                 loader: 'json'
             },
@@ -43,11 +53,14 @@ module.exports = {
     },
     vue: {
         loaders: {
-            css: ExtractTextPlugin.extract("style-loader", "css"),
+            css: ExtractTextPlugin.extract("css"),
         }
     },
     plugins: [
-        new ExtractTextPlugin("style.css"),
+        new ExtractTextPlugin("style.css", {
+            allChunks: true,
+            disable: false
+        }),
     ],
     devServer: {
     //   historyApiFallback: true,
