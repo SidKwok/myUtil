@@ -7,14 +7,20 @@
 			<li v-link="{name : 'about'}">about</li>
 		</ul>
 		<img class="index" src="../assets/images/index.png">
+		<nv-top></nv-top>
 	</div>
 </template>
 <script>
-
+	export default {
+		components:{
+			"nvTop": require('../components/menu.vue')
+		}
+	}
 </script>
 <style>
 	.home-con{
 		width: 400px;
 		height: 400px;
+		color: green;
 	}
 </style>

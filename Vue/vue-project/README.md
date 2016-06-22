@@ -36,3 +36,6 @@
 │   └── main.js               // Webpack 预编译入口
 └── webpack.config.js  	      // Webpack 配置文件
 </pre>
+
+##注意
+view里面的因为是根目录，所以在hot-reload的时候会导致刷新页面，单独的hot-reload只支持components中的.vue

@@ -3,7 +3,7 @@
 * @author Sid
 */
 
-exports.routerMap = function(router) {
+export default function(router){
     router.map({
     	 '/':{				//首页
             component: function (resolve) {
