@@ -2,11 +2,12 @@
 
 <pre>
 ###开发目录
-├── README.md           
+├── README.md
+├── dist                      // 项目build目录           
 ├── index.html                // 项目入口文件
 ├── package.json              // 项目配置文件
 ├── src                       // 生产目录
-│   ├── views                 // 组件
+│   ├── views                 // 各种页面
 │   |    ├── home.vue
 │   |    ├── blog.vue
 │   |    ├── about.vue

@@ -11,6 +11,8 @@
 	</div>
 </template>
 <script>
+	require('../assets/css/home.css');
+
 	export default {
 		components:{
 			"nvTop": require('../components/menu.vue')

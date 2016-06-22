@@ -2,39 +2,37 @@
 * 路由表
 * @author Sid
 */
+import homeView from './views/home.vue'
+import aboutView from './views/about.vue'
+import blogView from './views/blog.vue'
+import topicView from './views/topic.vue'
 
 export default function(router){
     router.map({
-    	 '/':{				//首页
-            component: function (resolve) {
-    	      require(['./views/home.vue'],resolve)
-    	    }
+        // '/':{ 这是异步的方法，会将代码分割
+        //    component: function (resolve) {
+        //      require(['./views/home.vue'],resolve)
+        //    }
+        // },
+        '/': {
+            component: homeView,
+            name: 'home'
         },
-        '/home':{
-        	name : 'home',				//首页
-            component: function (resolve) {
-    	      require(['./views/home.vue'],resolve)
-    	    }
+        '/home': {
+            component: homeView,
+            name: 'home'
         },
-        '/blog':{
-        	name : 'blog',               //博客列表
-            component: function (resolve) {
-    	      require(['./views/blog.vue'],resolve)
-    	    }
+        '/about': {
+            component: aboutView,
+            name: 'about'
         },
-        '/blog/topic':{
-        	name : 'topic',
-        	//文章详情
-        	component: function (resolve) {
-    	      require(['./views/topic.vue'],resolve)
-    	    }
+        '/topic': {
+            component: topicView,
+            name: 'topic'
         },
-        '/about':{
-        	name : 'about',
-        	//关于
-        	component: function (resolve) {
-    	      require(['./views/about.vue'],resolve)
-    	    }
+        '/blog': {
+            component: blogView,
+            name: 'blog'
         }
     });
 }

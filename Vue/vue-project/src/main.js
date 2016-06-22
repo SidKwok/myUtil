@@ -9,7 +9,6 @@ var app = Vue.extend({});
 
 var router = new VueRouter();
 
-
 routerMap(router);
 
 router.start(app, '#app');
