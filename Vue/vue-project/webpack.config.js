@@ -26,12 +26,12 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract(
-                    "style-loader", 'css-loader?sourceMap!sass-loader!cssnext-loader')
+                    "style-loader", 'css-loader?sourceMap!sass-loader!postcss-loader')
             },
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract(
-                    "style-loader", "css-loader?sourceMap!cssnext-loader")
+                    "style-loader", "css-loader?sourceMap!postcss-loader")
             },
             {
                 test: /\.json$/,
