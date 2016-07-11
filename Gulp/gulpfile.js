@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     browserSync = require('browser-sync').create(),
     webpack = require('webpack-stream')，
-    babel = require('gulp-babel');
+    babel = require('gulp-babel'),
+    rename = require('gulp-rename');
 
 
 /**
@@ -18,6 +19,17 @@ gulp.task('uglifyjs', function(){
      return gulp.src('path/to/example.js')
          .pipe(uglify())
          .pipe(gulp.dest('path/to/outputfile'));
+});
+
+/**
+* 配合gulp-rename生成压缩版本
+*/
+gulp.task('uglifyjs', function(){
+    return gulp.src('./src/simpleTable.js')
+        .pipe(gulp.dest('./dist'))
+        .pipe(uglify())
+        .pipe(rename({ extname: '.min.js'}))
+        .pipe(gulp.dest('./dist'));
 });
 
 /**
